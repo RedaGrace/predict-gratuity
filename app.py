@@ -25,7 +25,7 @@ def read_pickle(saved_model_name:str):
     return model
   
 # Read in pickle
-model = read_pickle(model_name)
+rf = read_pickle(model_name)
 
 app = Flask(__name__)
 CORS(app)
@@ -44,8 +44,8 @@ def request_page():
     inputs = np.array(inputs).reshape(1, -1)
     
 
-    output = float(model.predict(inputs)[0][0])
-    proba = float(model.predict_proba(inputs)[0].max())
+    output = float(rf.predict(inputs)[0][0])
+    proba = float(rf.predict_proba(inputs)[0].max())
     proba *= 100
     proba = int(proba)
 
