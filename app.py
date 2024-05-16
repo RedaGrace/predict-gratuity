@@ -1,5 +1,6 @@
 from flask import *
 import pandas as pd
+import numpy as np
 import json, time
 import pickle
 import re
