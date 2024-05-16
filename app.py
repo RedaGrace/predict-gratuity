@@ -45,7 +45,7 @@ def request_page():
     inputs = np.array(inputs).reshape(1, -1)
     
 
-    output = float(rf.predict(inputs)[0][0])
+    output = int(rf.predict(inputs)[0])
     proba = float(rf.predict_proba(inputs)[0].max())
     proba *= 100
     proba = int(proba)
